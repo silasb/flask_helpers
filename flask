@@ -1,0 +1,32 @@
+#!/bin/sh
+
+BASE=$1
+mkdir $BASE
+
+mkdir -p $BASE/templates
+mkdir -p $BASE/static
+mkdir -p $BASE/scripts
+
+cat >> $BASE/scripts/server <<EOF
+#!/usr/bin/env python
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
+from $BASE import app
+app.run(debug=True)
+EOF
+chmod +x $BASE/scripts/server
+
+cat >> $BASE/__init__.py <<EOF
+from flask import Flask
+app = Flask(__name__)
+
+import $BASE.views
+EOF
+
+cat >> $BASE/views.py <<EOF
+from $BASE import app
+
+@app.route('/')
+def index():
+  return 'Hello world'
+EOF
