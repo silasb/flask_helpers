@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# usage:  flask project_name
+# RTFM: http://github.com/silasb/flask_helpers
+
 BASE=$1
 mkdir $BASE
 
