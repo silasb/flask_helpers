@@ -27,6 +27,6 @@ To create a ``Flask`` project just::
 Now to use the actually project you need to ::
 
     $ cd my_project
-    $ ./script/serve
+    $ ./script/server
 
 Visit `localhost <http://localhost:5000/>`_
