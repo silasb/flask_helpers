@@ -5,12 +5,10 @@ Installation
 
 To install::
 
-    $ curl -O http://github.com/silasb/flask_helpers/raw/master/flask
-    $ mv flask $HOME/bin
-    $ chmod +x $HOME/bin/flask
+    $ git clone http://github.com/silasb/flask_helpers/
+    $ cd flask_helpers/
+    $ make
     
-If you don't have ``curl`` you can use ``wget http://github.com/silasb/flask_helpers/raw/master/flask``
-
 If your ``PATH`` isn't set then you need to set it like this::
 
     $ export PATH=$HOME/bin
